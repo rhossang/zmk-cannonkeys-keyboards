@@ -151,9 +151,7 @@ zephyr_udc0: &usbd {
 };
 
 &gpregret1 {
-    status = "okay";
-
-    boot_mode0: boot_mode@0 {
+    adafruit_boot_retention: retention@0 {
         compatible = "zephyr,retention";
         status = "okay";
         reg = <0x0 0x1>;
@@ -162,7 +160,22 @@ zephyr_udc0: &usbd {
 
 / {
     chosen {
-        zephyr,boot-mode = &boot_mode0;
+        zephyr,boot-mode = &boot_retention;
+        zmk,magic-boot-mode = &adafruit_boot_retention;
+    };
+
+    magic_mapper {
+        compatible = "zmk,bootmode-to-magic-mapper";
+        status = "okay";
+
+        #address-cells = <1>;
+        #size-cells = <1>;
+
+        boot_retention: retention@0 {
+            compatible = "zephyr,retention";
+            status = "okay";
+            reg = <0x0 0x1>;
+        };
     };
 };
 
