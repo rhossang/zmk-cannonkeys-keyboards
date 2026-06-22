@@ -34,14 +34,14 @@
 
         rgb_layer {
 // ------------------------------------------------------------------------------------------------
-// |  `  | F1  | F2  | F3  | F4  | F5  | F6  | F7  | F8  | F9  | F10 | F11 | F12 |     | DEL |
+// | BOOT| F1  | F2  | F3  | F4  | F5  | F6  | F7  | F8  | F9  | F10 | F11 | F12 |     | DEL |
 // | TRANS | F5  | F6  | F7  | F8  |EFR |HUI |SAI |BRI |SPI | TRANS| TRANS| TRANS| BSLH|
 // | TRANS | F9  | F10 | F11 | F12 |EFF |HUD |SAD |BRD |SPD | TRANS| TRANS|      TRANS      |
 // | TRANS |VOL- |VOL+ |SLEEP| TRANS|TRANS|TRANS|TRANS| WIN | MAC |TRANS|  UP  |    TRANS    |
 // | TRANS | TRANS | TRANS |          TOG RGB           |  MO(2)  | HOME | PGDN | END |
 // ------------------------------------------------------------------------------------------------
             bindings = <
-    &kp GRAVE &kp F1    &kp F2    &kp F3  &kp F4           &kp F5          &kp F6          &kp F7          &kp F8   &kp F9   &kp F10  &kp F11 &kp F12  &trans &kp DEL
+    &bootloader &kp F1    &kp F2    &kp F3  &kp F4           &kp F5          &kp F6          &kp F7          &kp F8   &kp F9   &kp F10  &kp F11 &kp F12  &trans &kp DEL
     &trans  &kp F5    &kp F6    &kp F7  &kp F8  &rgb_ug RGB_EFR  &rgb_ug RGB_HUI  &rgb_ug RGB_SAI &rgb_ug RGB_BRI &rgb_ug RGB_SPI  &trans   &trans   &trans   &kp BSLH
     &trans  &kp F9    &kp F10    &kp F11  &kp F12 &rgb_ug RGB_EFF &rgb_ug RGB_HUD &rgb_ug RGB_SAD &rgb_ug RGB_BRD &rgb_ug RGB_SPD  &trans   &trans   &trans
     &trans  &kp K_VOL_DN    &kp K_VOL_UP    &kp SYSTEM_SLEEP  &trans &trans       &trans    &trans    &to 0   &to 3          &trans                    &kp PGUP  &trans
